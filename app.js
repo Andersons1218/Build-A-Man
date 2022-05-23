@@ -10,14 +10,26 @@ let hints = [[" Most populated city in America","Everyone loves a queen","Blank 
 
 //picks Word
 
-//click hint and hints show up 
-
 const letters = document.querySelectorAll('.letters')
 for (const letter of letters){
-    if (letter)
+    // if (letter === pickedLetter){
+    //     return true 
+    // }
     letter.addEventListener('click', function(){
         return letter.innerText
     })
 }
+//guesses for words
+wordLine = function () {;
+    for (let i = 0; i < words.length; i++)
+    if(words[i]=== "_") {
+        guess.innerHTML = "_";
+        space = 1;
+
+    }else {
+        guess.innerhtml = "_";
+    }
+}
+
 //play again function 
 
