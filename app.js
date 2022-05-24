@@ -1,27 +1,34 @@
 //different variables
 let alphabet = [ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-let categoryTitle = [ 'City', 'Drink']
-let words = [['New York', 'London','Seoul', 'Tokyo','Los Angeles'
-], [ 'Martini', 'Mojito', 'Margarita', 'Cosmopolitan', 'Mimosa']]
-let hints = [[" Most populated city in America","Everyone loves a queen","Blank Food", "Get amazing sushi from here","City of Angles" ], ["This drink can be shaken not stirred", "A popular Mexican drink","A drink made famous by tv show for single women", "A Drink originated in cuba","a Sunday funday drink"]]
+let words = ['New York', 'London','Seoul', 'Tokyo','Los Angeles', 'Martini', 'Mojito', 'Margarita', 'Cosmopolitan', 'Mimosa']
 
 
 //picks Word
 function randomWord (){
-    let theWord = words[0][Math.floor(Math.random()*words[0].length)];
-    let theWord2 = words[1][Math.floor(Math.random()*words[1].length)];
-    
-    console.log(words[0].length)
+    let theWord = words[Math.floor(Math.random()*words.length)];
 }
 randomWord()
-//guesses for words
+//set up answer array
 let answerArray = [];
 for (let i = 0; i < words.length; i++){
     answerArray[i] = "_";
 }
 let remainingLetters = words.length;
-
-
-//play again function 
+//Game Loop
+while(remainingLetters > 0) {
+    alert(answerArray.join(" "));
+    let guess = promt("Guess a letter");
+}if (guess === null){
+    break;
+}else if (guess.length !==1){
+    alert("please enter letter");
+}else{
+    for (let x = 0; x < words.length; x++){
+        if (word[x]=== guess){
+            answerArray[x] = guess;
+            remainingLetter--;
+        }
+    }
+}
 
