@@ -9,16 +9,13 @@ let hints = [[" Most populated city in America","Everyone loves a queen","Blank 
 
 
 //picks Word
-
-const letters = document.querySelectorAll('.letters')
-for (const letter of letters){
-    // if (letter === pickedLetter){
-    //     return true 
-    // }
-    letter.addEventListener('click', function(){
-        return letter.innerText
-    })
+function randomWord (){
+    let theWord = words[0][Math.floor(Math.random()*words[0].length)];
+    let theWord2 = words[1][Math.floor(Math.random()*words[1].length)];
+    
+    console.log(words[0].length)
 }
+randomWord()
 //guesses for words
 wordLine = function () {;
     for (let i = 0; i < words.length; i++)
