@@ -16,10 +16,12 @@ function randomWord (){
 }
 randomWord()
 //guesses for words
-function wordGuessed() {
-    let wordStatus = guess.split(' ').map(letter => guessed.indexof(letter))>= 0 ? letter : "_".join('');
-    document.getElementById('wordGoesHere').innnerHTML = wordStatus;
+let answerArray = [];
+for (let i = 0; i < words.length; i++){
+    answerArray[i] = "_";
 }
+let remainingLetters = words.length;
+
 
 //play again function 
 
