@@ -17,16 +17,7 @@ function randomWord (){
 }
 randomWord()
 //guesses for words
-wordLine = function () {;
-    for (let i = 0; i < words.length; i++)
-    if(words[i]=== "_") {
-        guess.innerHTML = "_";
-        space = 1;
-
-    }else {
-        guess.innerhtml = "_";
-    }
-}
+// 
 
 //play again function 
 
