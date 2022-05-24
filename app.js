@@ -7,7 +7,6 @@ let words = [['New York', 'London','Seoul', 'Tokyo','Los Angeles'
 let hints = [[" Most populated city in America","Everyone loves a queen","Blank Food", "Get amazing sushi from here","City of Angles" ], ["This drink can be shaken not stirred", "A popular Mexican drink","A drink made famous by tv show for single women", "A Drink originated in cuba","a Sunday funday drink"]]
 
 
-
 //picks Word
 function randomWord (){
     let theWord = words[0][Math.floor(Math.random()*words[0].length)];
@@ -17,7 +16,10 @@ function randomWord (){
 }
 randomWord()
 //guesses for words
-// 
+function wordGuessed() {
+    let wordStatus = guess.split(' ').map(letter => guessed.indexof(letter))>= 0 ? letter : "_".join('');
+    document.getElementById('wordGoesHere').innnerHTML = wordStatus;
+}
 
 //play again function 
 
