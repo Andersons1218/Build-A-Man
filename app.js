@@ -7,6 +7,7 @@ let words = ["pizza", "cheeseburger", "fries", "pancake"]
 //picks Word
 function randomWord (){
     let theWord = words[Math.floor(Math.random()*words.length)];
+    alert(theWord)
 }
 randomWord()
 //set up answer array
@@ -30,5 +31,6 @@ while(remainingLetters > 0) {
         }
     }
 }
+
 
 
