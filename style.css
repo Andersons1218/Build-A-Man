@@ -6,7 +6,6 @@ body {
   .wrapper {
     width: fit-content;
     margin: auto;
-  
  
   }
   .reset-btn {
@@ -22,7 +21,7 @@ body {
     cursor: pointer;
   }
   .alphabet:hover {
-    background-color: ;
+    background-color: purple;
     border: none;
   }
   .disabled {
@@ -30,9 +29,7 @@ body {
     background-color: darkgray;
   }
   
-  .spaces {
-    display: inline-flex;
-  }
+
   .word {
     margin-right: 1.5rem;
   }
@@ -50,4 +47,8 @@ body {
     border-bottom: 2px black solid;
     margin: 10px;
 
+  }
+  .gameover{
+    color: red;
+    text-size-adjust: large;
   }

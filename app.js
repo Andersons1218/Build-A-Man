@@ -46,7 +46,7 @@ const initiate = function (game) {
     }
   };
   creatWordCont();
-
+// Game logic 
   letterButtons = document.querySelectorAll(".alphabet");
   function checkButtons() {
     let wrongLetter = false;
