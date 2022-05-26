@@ -40,7 +40,7 @@ const initiate = function (game) {
 
  // creating lines and selecting the words 
  for (let i = 0; i < theWord.length; i++) {
-   const html = `<p class="spaces">___</p>`;
+   const html = `<p class="spaces">_</p>`;
    spaces.insertAdjacentHTML('beforeend', html);
  }
 };
@@ -92,23 +92,24 @@ const letterPress = function () {
     } else {
       decreaseLife();
     }
+
        this.classList.add('disabled');
        
   };
   
   // listening to letter buttons presses
-  letterButton.forEach(button => {   
+  letterButtons.forEach(button => {   
    button.addEventListener('click', letterPress);
   });
   
   
   
   // listening to reset btn
-  resetButton.addEventListener('click', function () {
-    initiate('reset');
-  });
+//   resetButton.addEventListener('click', function () {
+//     initiate('reset');
+//   });
   
-  // listening to play again button
-  playAgain.addEventListener('click', function () {
-    initiate('reset');
-  });
+//   // listening to play again button
+//   playAgain.addEventListener('click', function () {
+//     initiate('reset');
+//   });

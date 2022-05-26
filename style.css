@@ -1,12 +1,49 @@
 body {
-    background-color:;
     
-}
-h1 {
-    color:;
-}
-p{
-    color:;
-
-
+    color: black;
+    text-align: center;
+  }
+  .wrapper {
+    width: fit-content;
+    margin: auto;
+  
+  }
+  .reset-btn,
+  .notif-btn {
+    cursor: pointer;
+  }
+  .reset-btn {
+    margin-left: auto;
+  }
+  .alphabet {
+    width: 2rem;
+    height: 2rem;
+    background: aqua;
+    border: none;
+    border-radius: 4px;
+    margin: 3px;
+    cursor: pointer;
+  }
+  .alphabet:hover {
+    background-color: ;
+    border: none;
+  }
+  .disabled {
+    pointer-events: none;
+    background-color: darkgray;
+  }
+  
+  .spaces {
+    display: inline-flex;
+  }
+  .word {
+    margin-right: 1.5rem;
+  }
+  
+  .blur {
+    filter: blur(2px);
+  }
+  .hidden {
+    display: none;
+  }
   
