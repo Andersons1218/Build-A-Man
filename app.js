@@ -1,15 +1,17 @@
 //different variables
 let selectWord;
 // console.log(selectWord);
-const winningMessage = document.querySelector('.winningmesg')
-const gameovermessage = document.querySelector('.gameover')
+const winningMessage = document.querySelector(".winningmesg");
+const gameovermessage = document.querySelector(".gameover");
 const wordContel = document.querySelector(".wordCont");
 const letterButton = document.querySelector(".letterbuttons");
 const numberOfTries = document.querySelector(".numberOfTries");
 const guesses = document.querySelector(".guesses");
-let words = ["pizza", "chips", "fries", "pancake"];
+let words = ["tacos", "chips", "fries", "pancake"];
 let tries = 5;
 let theWord;
+let currentGuess = '';
+let targetWord = '';
 
 //page refreshes picks random Word
 function randomWord() {
@@ -34,7 +36,7 @@ const initiate = function (game) {
   }
   selectWord = randomWord(wordContel);
   // console.log(selectWord);
-
+  
   creatWordCont = function () {
     for (let z = 0; z < selectWord.length; z++) {
       //console.log(selectWord[z])
@@ -43,20 +45,25 @@ const initiate = function (game) {
       letterCont.classList.add("letter");
       // console.log(letterCont)
       wordContel.appendChild(letterCont);
+      targetWord += selectWord[z]
     }
   };
   creatWordCont();
-// Game logic 
+
+  console.log(targetWord);
+
+  // Game logic
+  
   letterButtons = document.querySelectorAll(".alphabet");
   function checkButtons() {
     let wrongLetter = false;
     for (const letter of letterButtons) {
-      
       // console.log(letter)
       letter.addEventListener("click", function () {
         // console.log(tries); // console.log(`${letter.innerText} was clicked`)
 
         let letterText = letter.innerText;
+        currentGuess += letterText
         // console.log(letterText);
         let letterels = document.querySelectorAll(".letter");
         // console.log(letterels)
@@ -65,27 +72,42 @@ const initiate = function (game) {
           // console.log(letterText);
           if (letterel.classList.contains(letterText.toLowerCase())) {
             letterel.innerText = letterText;
+            if (isWin(currentGuess, targetWord)) {
+              winningMessage.innerText = "You Win"
+              console.log("you win");
+            }
           } else {
             wrongLetter = true;
-            tries -= (1 / theWord.length) ;
-            numberOfTries.textContent = Math.ceil(tries);
           }
-        } if (Math.ceil(tries) <= 0){
-        // console.log("you lost")
+        }
+        if (wrongLetter) {
+          tries -= 1 / theWord.length;
+          numberOfTries.textContent = Math.ceil(tries);
+        }
+        if (Math.ceil(tries) <= 0) {
+          // console.log("you lost")
           tries = 0;
           numberOfTries.textContent = tries;
-         gameovermessage.innerText = 'You lost!'
+          gameovermessage.innerText = "You lost!";
         }
         // console.log(tries);
-      })
-    
+      });
     }
+   
   }
+  
   checkButtons();
+ 
 };
 
 // console.log(wordContel);
 
 initiate("start");
-
-
+// winning condition
+function isWin(guess, word) {
+  if (guess.toLowerCase() == word) {
+    return true;
+  } else {
+    return false;
+  }
+}
