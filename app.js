@@ -3,16 +3,16 @@ const playAgain = document.querySelector('.playagain')
 const reset = document.querySelector('.reset')
 const spaces = document.querySelector('.spaces')
 const letterButton = document.querySelector('.letterbuttons')
-const numberOfTires = document.querySelector('.numberOfTries');
+const numberOfTries = document.querySelector('.numberOfTries');
 const guesses = document.querySelector('.guesses')
 let words = ["pizza", "cheeseburger", "fries", "pancake"]
-let tires;
+let tries;
 
     
 
  //picks random Word
 function randomWord (){
-    theWord = words[Math.floor(Math.random()*words.length)];
+   return theWord = words[Math.floor(Math.random()*words.length)];
   
 }
 randomWord();
@@ -33,10 +33,10 @@ const initiate = function (game) {
     });
   }
   selectWord = randomWord(spaces);
-  tires = 5;
+  tries = 5;
 
  letterButtons = document.querySelectorAll('.alphabet');
- numberOfTires.textContent = tires;
+ numberOfTries.textContent = tries;
 
  // creating lines and selecting the words 
  for (let i = 0; i < theWord.length; i++) {
@@ -48,49 +48,50 @@ const initiate = function (game) {
 initiate('start');
 
 
-// Amount of tires go down
-const tiresGoDown = function () {
- tires--;
- numberOfTires.textContent = tries;
+// Amount of tries go down and alerts loser
+const triesGoDown = function () {
+ tries--;
+ numberOfTries.textContent = tries;
  if (tries === 0) {
-   showNotif('lost');
+   alert('lost');
  }
 };
-
-// 
-const getindexes = function (whichLetter) {
- let indexes = [];
- [words].forEach((y, i) => {
-   if (y === letter) {
-     const index = i;
-     indexes.push(index);
-   }
- });
- return indexes;
-};
-
 // check if there is a complete word
 const checkWord = function () {
  let guessedWord = true;
- for (let i = 0; i < wordDiv.children.length; i++) {
-   if (word.children[i].textContent === '_') {
+ for (let i = 0; i < spaces.children.length; i++) {
+   if (spaces.children[i].textContent === '_') {
      guessedWord = false;
    }
  }
  return guessedWord;
 };
+//checks to see if letter fits into word
+const getindexes = function (letter) {
+ let indexes = [];
+ [spaces].forEach((y, i) => {
+   if (y === letter) {
+     const index = i;
+     indexes.push(index);
+   }
+ });
+ //console.log(indexes)
+ return indexes;
+};
+
+
 // letters event listener function
 const letterPress = function () {
     const letter = this.textContent.toLowerCase();
-  
-    if (word.includes(letter)) {
+  console.log(selectWord)
+    if (selectWord.includes(letter)) {
       const indexes_list = getindexes(letter);
       indexes_list.forEach((xy, i) => {
-        word.children[xy].textContent = this.textContent;
+        spaces.children[xy].textContent = this.textContent;
       });
       if (checkWord()) display('won');
     } else {
-      decreaseLife();
+      triesGoDown();
     }
 
        this.classList.add('disabled');
