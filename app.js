@@ -1,6 +1,6 @@
 //different variables
-const playAgain = document.querySelector('.playagain')
-const reset = document.querySelector('.reset')
+let selectWord;
+
 const spaces = document.querySelector('.spaces')
 const letterButton = document.querySelector('.letterbuttons')
 const numberOfTries = document.querySelector('.numberOfTries');
@@ -10,7 +10,7 @@ let tries;
 
     
 
- //picks random Word
+ //page refreshes picks random Word
 function randomWord (){
    return theWord = words[Math.floor(Math.random()*words.length)];
   
@@ -18,10 +18,10 @@ function randomWord (){
 randomWord();
 
 
-let selectWord;
+
 //adding letters to HTML
 const initiate = function (game) {
-  spaces.innerHTML = '';
+  spaces.innerHTML = ' ';
   if (game === 'start') {
     for (const i of 'abcdefghijklmnopqrstuvwxyz') {
       const html = `<button class="alphabet">${i.toUpperCase()}</button>`;
@@ -73,23 +73,24 @@ const getindexes = function (letter) {
    if (y === letter) {
      const index = i;
      indexes.push(index);
+     
    }
  });
- //console.log(indexes)
+
  return indexes;
 };
 
 
-// letters event listener function
+// winning and losing conditions
 const letterPress = function () {
     const letter = this.textContent.toLowerCase();
   console.log(selectWord)
     if (selectWord.includes(letter)) {
       const indexes_list = getindexes(letter);
-      indexes_list.forEach((xy, i) => {
-        spaces.children[xy].textContent = this.textContent;
+      indexes_list.forEach((x, i) => {
+        spaces.children[x].textContent = this.textContent;
       });
-      if (checkWord()) display('won');
+      if (checkWord()) alert('you win');
     } else {
       triesGoDown();
     }
@@ -98,19 +99,12 @@ const letterPress = function () {
        
   };
   
-  // listening to letter buttons presses
+  // buttons presses
   letterButtons.forEach(button => {   
    button.addEventListener('click', letterPress);
   });
   
   
   
-  // listening to reset btn
-//   resetButton.addEventListener('click', function () {
-//     initiate('reset');
-//   });
   
-//   // listening to play again button
-//   playAgain.addEventListener('click', function () {
-//     initiate('reset');
-//   });
+  
