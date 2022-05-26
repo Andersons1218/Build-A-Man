@@ -1,6 +1,6 @@
 //different variables
 let selectWord;
-console.log(selectWord);
+// console.log(selectWord);
 const winningMessage = document.querySelector('.winningmesg')
 const gameovermessage = document.querySelector('.gameover')
 const wordContel = document.querySelector(".wordCont");
@@ -16,7 +16,7 @@ function randomWord() {
   return (theWord = words[Math.floor(Math.random() * words.length)]);
 }
 randomWord();
-console.log(theWord.length);
+// console.log(theWord.length);
 
 //adding letters to HTML
 const initiate = function (game) {
@@ -33,7 +33,7 @@ const initiate = function (game) {
     });
   }
   selectWord = randomWord(wordContel);
-  console.log(selectWord);
+  // console.log(selectWord);
 
   creatWordCont = function () {
     for (let z = 0; z < selectWord.length; z++) {
@@ -54,7 +54,7 @@ const initiate = function (game) {
       
       // console.log(letter)
       letter.addEventListener("click", function () {
-        console.log(tries); // console.log(`${letter.innerText} was clicked`)
+        // console.log(tries); // console.log(`${letter.innerText} was clicked`)
 
         let letterText = letter.innerText;
         // console.log(letterText);
@@ -71,12 +71,12 @@ const initiate = function (game) {
             numberOfTries.textContent = Math.ceil(tries);
           }
         } if (Math.ceil(tries) <= 0){
-        console.log("you lost")
+        // console.log("you lost")
           tries = 0;
           numberOfTries.textContent = tries;
          gameovermessage.innerText = 'You lost!'
         }
-        console.log(tries);
+        // console.log(tries);
       })
     
     }
@@ -84,7 +84,7 @@ const initiate = function (game) {
   checkButtons();
 };
 
-console.log(wordContel);
+// console.log(wordContel);
 
 initiate("start");
 
