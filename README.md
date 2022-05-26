@@ -1,8 +1,7 @@
 ### Build-A-Man
-Are you a single and thriving? Do you have a few minutes on your hands? Then take a few minutes to play Build-A-Man! Build-A-Man is just like hangman the object is to guess the word right so your single happy self with doesnt get trapped with a man. Don't guess the word in 6 tries then you happieness comes to an end and youre stuck with man. 
+Do you know what it takes to build a man? Do you eat enough junk food? Do you have a few minutes on your hands? Then take a few minutes to play Build-A-Man! Build-A-Man is just like hangman the object is to guess the word right so you can have a yummy snack! Don't guess the word in 5 tries then then it looks like youre just gonna be a skinny mini for a while longer. 
 ### User story
-* Click the letters on the on the screen and guess the word in less then 6 tiries. 
-* Need help guessing the word press hint and you get a hit to what the word is.
+* Click the letters on the on the screen and guess the word in less then 5 tries. 
 * You have 5 lives. 
 * Cant guess the word right in 5 tries then GAME OVER!
 ### Technologies Used 
