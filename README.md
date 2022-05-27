@@ -10,4 +10,4 @@ Do you know what it takes to build a man? Do you eat enough junk food? Do you ha
 * Javascript
 ### What the game looks like
 
-![IMG_4109](https://user-images.githubusercontent.com/104103694/169827515-0bd0af39-a22c-4677-abf9-99ed9e9b282f.jpeg)
+![IMG_4123](https://user-images.githubusercontent.com/104103694/170616478-468e4937-eafa-4a0d-be41-bc4627b7a338.jpeg)
